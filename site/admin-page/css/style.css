@@ -1,0 +1,147 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+:root{
+    --main-color:#191921;
+    --border-color:#31313d;
+    --link-background-color:#23232b;
+    --main-text-color:#555;
+    --a7a :#d8d800;
+}
+body{
+    font-family: nunito;
+    display: flex;
+}
+aside{
+    overflow-y: auto;
+    width: 15%;
+    min-width: 200px;
+    padding: 20px;
+    background-color:var(--main-color);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+.side-bar-title{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.side-bar-links  {
+    display: flex;
+    flex-direction: column;
+    gap:15px;
+    height: 100%;
+
+}
+.side-bar-link  , .nav-bar-link{
+    padding:10px 15px;
+    display: flex;
+    gap:15px;
+    color: white;
+    border: 1px solid var(--border-color);
+    border-radius: 7px;
+    background-color: var(--link-background-color);
+    align-items: center;
+    overflow: hidden;
+    position: sticky;
+    cursor:pointer ;
+}
+.side-bar-link i{
+    outline: 0px 1px 0px 0px solid var(--border-color);  /* Outer offset border */
+    outline-offset: 5px; /* Moves the outline outward */
+}
+.side-bar-link a , .nav-bar-link a{
+    color: white;
+    text-decoration: none;
+}
+.logout{
+    margin-top:auto;
+    align-self: flex-start;
+}
+
+.side-bar-image{
+    margin: auto;
+    max-width:112px;
+    padding: 15px;
+    width: 70%;
+    background-color: white;
+    border-radius:50%;
+    align-self: center;
+    justify-self: center;
+}
+main{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+nav{
+    width: 100%;
+    height: 70px;
+    display: flex;
+    padding: 10px 15px;
+    justify-content: space-between;
+    align-items: center;
+    color: var(--main-color);
+}
+.nav-bar-links{
+    display: flex;
+    gap: 15px;
+    height: 100%;
+}
+.variable-section{
+    background-color: #ddd;
+    height: 100%;
+    padding: 15px;
+}
+.variable{
+    background-color:white ;
+    width:100% ;
+    height: 100%;
+    border-radius: 20px;
+    padding: 15px;
+}
+
+
+/* FOR MEMBERS SITE */
+
+
+
+table{
+    width: 100%;
+    border-collapse: collapse;
+}
+th ,td{
+    border: 1px solid black;
+    padding: 10px 20px ;
+    font-weight: 200;
+    font-size: 20px;
+}
+th{
+    font-weight: bold;
+    border: 1px solid grey ;
+    background-color: var(--border-color);
+    margin: 10px;
+    color:white;
+    text-transform: capitalize;
+}
+
+
+/* For Edit Button */
+
+
+#edit-button{
+    background-color: var(--a7a);
+}
+
+#edit-button:active {
+    background: #ccbb00;
+}
+
+#edit-button .icon{
+    border-left-color:#cccc00 ;
+}

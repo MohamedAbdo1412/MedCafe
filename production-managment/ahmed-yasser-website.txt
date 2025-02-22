@@ -1,0 +1,11 @@
+Name : MED CAFE
+
+Course: BFOM44
+
+Course: Bio Chemstry 1
+
+slogan: best college friend
+
+blue-color :#68b6ff
+
+104, 182, 255
