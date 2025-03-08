@@ -10,12 +10,36 @@
     --main-text-color:#555;
     --a7a :#d8d800;
 }
+/* Width and height of scrollbar */
+::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+  }
+  
+  /* Track (background of the scrollbar) */
+  ::-webkit-scrollbar-track {
+    background: #f1f1f1; 
+    border-radius: 10px;
+  }
+  
+  /* Thumb (draggable part of the scrollbar) */
+  ::-webkit-scrollbar-thumb {
+    background: #888; 
+    border-radius: 10px;
+  }
+  
+  /* Thumb on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: #555; 
+  }
+  
 body{
     font-family: nunito;
     display: flex;
+    height: 100vh;
 }
 aside{
-    overflow-y: auto;
+    display: block;
     width: 15%;
     min-width: 200px;
     padding: 20px;
@@ -30,6 +54,8 @@ aside{
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-direction: column;
+    gap: 20px;
 }
 .side-bar-links  {
     display: flex;
@@ -76,8 +102,10 @@ aside{
 }
 main{
     width: 100%;
+    height: 100%;
     display: flex;
     flex-direction: column;
+    overflow: hidden;
 }
 nav{
     width: 100%;
@@ -97,6 +125,7 @@ nav{
     background-color: #ddd;
     height: 100%;
     padding: 15px;
+    overflow: hidden;
 }
 .variable{
     background-color:white ;
@@ -104,8 +133,14 @@ nav{
     height: 100%;
     border-radius: 20px;
     padding: 15px;
+    overflow: auto;
+    display: flex;
+    flex-direction: column;
 }
-
+.premium{
+    color: #ffd700;
+    text-shadow:1px 1px 1px rgb(111, 86, 15) , 0px 0px 2px rgb(105, 85, 30) ;
+}
 
 /* FOR MEMBERS SITE */
 
@@ -117,9 +152,9 @@ table{
 }
 th ,td{
     border: 1px solid black;
-    padding: 10px 20px ;
-    font-weight: 200;
-    font-size: 20px;
+    padding: 3px 8px ;
+    font-weight: 400;
+    font-size: 18px;
 }
 th{
     font-weight: bold;
@@ -129,19 +164,308 @@ th{
     color:white;
     text-transform: capitalize;
 }
-
+label{
+    font-weight: 600;
+}
+table input ,textarea ,select ,option{
+    padding: 8px;
+    font-size: 16px;
+    max-width: 400px;
+}
 
 /* For Edit Button */
 
 
 #edit-button{
-    background-color: var(--a7a);
+    background-color:#00aaaa ;
 }
 
 #edit-button:active {
-    background: #ccbb00;
+    background: #007272 ;
 }
 
 #edit-button .icon{
-    border-left-color:#cccc00 ;
+    border-left-color:#007272 ;
 }
+
+
+
+/* For Delete Action Site */
+
+
+
+#delete-table-Confirm{
+
+    display: flex;
+    gap: 15px;
+}
+#delete-button-confirm{
+    width: 150px;
+}
+#ignore-button{
+    display: flex;
+    align-items: center;
+    color: white;
+    font-size: 18px;
+    background-color: #555;
+    padding: 0px 50px;
+    font-weight: 700;
+
+}
+#ignore-button:hover{
+    background-color: #333;
+}
+
+
+
+
+
+
+/* Responsive */
+
+    .menu-btn {
+        display: none;
+        background: none;
+        border: 1px solid var(--border-color);
+        color: var(--border-color);
+        font-size: 16;
+        cursor: pointer;
+        padding: 2px;
+        width: 40px;
+        height: 40px;
+    }
+    .menu-btn:hover ,.close-btn:hover{
+        background-color: #31313d;
+        color: white;
+    } 
+    .close-btn {
+        display: none;
+        background: none;
+        border: none;
+        color: white;
+        font-size: 30px;
+        cursor: pointer;
+    }
+    
+    /* For Courses Shit */
+    
+    .courses{
+        display: flex;
+    flex-direction: column;
+    gap: 15px;
+    width:100%;
+    align-items: center;
+}
+.course {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    width: 100%;
+}
+.course label{
+    background-color: var(--border-color);
+    padding: 15px;
+    border-radius: 8px;
+    position: relative;
+    box-shadow:1px 1px 1px rgb#2e5c2e , 0px 0px 2px #2e5c2e ;
+    transition: 0.3s;
+    position: relative;
+    z-index: 1;
+    color: white;
+    text-shadow:1px 1px 1px rgb(0, 0, 0) , 0px 0px 2px black ;
+}
+.course label::after{
+    position: absolute;
+    content: "+";
+    font-size: 24px;
+    top: 50%;
+    right: 15px;
+    transform: translatey(-50%);
+}
+.course ul{
+    list-style-type: none;
+    list-style-position: outside;
+}
+.course li{
+    max-width: 500px;
+    margin-bottom: 5px;
+}
+.course-content{
+    position: absolute;
+    z-index: 0;
+    width: 100%;
+    height: 0;
+    overflow: hidden;
+    justify-content: space-between;
+    display: flex;
+    border-radius: 0px 0px 7px 7px;
+    position: relative;
+    background-color: #ededed;
+}
+.course-content-functions{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.course button{
+    padding:10px 15px;
+    display: flex;
+    justify-items: space-around;
+    gap:15px;
+    color: white;
+    font-weight: 700;
+    /* border: 1px solid var(--border-color); */
+    box-shadow: 1px 1px 0.2px rgb(141, 141, 141) ,0px 0px 0.5px rgb(141, 141, 141);
+    border-radius: 7px;
+    background-color: var(--link-background-color);
+    align-items: center;
+    overflow: hidden;
+    cursor:pointer ;
+    text-align: left;
+}
+.course button:active{
+    backdrop-filter: blur(10px) brightness(1.2) contrast(0.8);
+}
+.course button:hover{
+    transform: scale(1.001);
+}
+.course i{
+    font-size: 18px;
+}
+.course a{
+    text-decoration: none;
+    color: blue;
+}
+.course a:hover{
+    text-decoration: underline;
+    color: rgb(48, 48, 255);
+}
+.active .course-content{
+    display: flex;
+    width: 100%;
+    height: 100%;
+    top: -5px;
+    padding: 15px;
+    overflow: hidden;
+    
+}
+.active label{
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+}
+.active label::after{
+    content: "|";
+    
+}
+
+.variable-header{
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: #ddd;
+    padding: 15px;
+    border-radius: 15px 15px 0px 0px;
+    position: sticky;
+    top: 0;
+    left:0;
+}
+.variable-header button{
+    color: white;
+    background-color: rgb(0, 82, 175);
+    display: flex;
+    justify-self: flex-start;
+    justify-content: space-between;
+    font-weight: 500;
+    padding: 10px;
+    align-items: center;
+    text-align: center;
+}
+.variable-header button:hover{
+    background-color: rgb(1, 64, 136);
+}
+
+button {
+    font-weight: 500;
+}
+
+/* Button Container in add courses */
+
+.button-container{
+    display: flex;
+    gap: 15px;
+}
+
+/* enroll section */
+
+#enroll_section{
+    display: flex;
+    gap: 15px;
+    width: fit-content;
+}
+#enroll_section form{
+    gap: 15px;
+    transition: 1s;
+}
+.remove-form{
+    display: none;
+}
+.active-form{
+    display: flex;
+}
+@media (max-width: 1024px) {
+    
+    .button-container {
+        flex-wrap: wrap;
+    }
+    .variable-section{
+        padding:5px;
+    }
+    .nav-bar-links img{
+        display: none;
+    }
+    aside {
+        display: none;
+        position: absolute;
+        left: 0;
+        top: 0;
+        z-index: 50;
+    }
+    aside .side-bar-title{
+        margin-bottom: 20px;
+    }
+    .logout{
+        margin-top:0;
+        align-self: flex-start;
+    }
+    .dashboard{
+        display: none;
+    }
+    th ,td{
+        border: 1px solid black;
+        padding: 3px 6px ;
+        font-weight: 200;
+        font-size: 14px;
+    }
+    .menu-btn {
+        display: block;
+    }
+    .close-btn {
+        display: block;
+    }
+    .course-content ul{
+        font-size: 12px;
+    }
+    #enroll_section form{
+        flex-direction: column;
+        flex-grow: 1;
+    }
+    #enroll_section form select{
+        height: 50px;
+        font-size: 14px;
+        width: 100%;
+    }
+
+
+}
+

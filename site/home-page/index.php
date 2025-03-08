@@ -1,3 +1,23 @@
+<?php
+
+session_start();
+if(isset($_SESSION['username'])){
+    $login_con= true;
+}else{
+    $login_con= false;
+}
+?>
+
+
+
+
+
+
+
+
+
+
+
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -24,8 +44,21 @@
                     </section>
                 </section>
                 <section class="nav-buttons">
+                    <?php
+                    if(!$login_con){
+
+                    ?>
                     <button class="button btn-login"><i class="fas fa-sign-in-alt"></i> Login</button>
                     <button class="button btn-join"><i class="fas fa-user-plus"></i> Join</button>
+                    <?php
+}else{
+    ?>
+    <h2>Hello <?=$_SESSION['username'];?></h2>
+
+<?php
+
+}
+?>
                 </section>
                 <div class="menu-icon" onclick="toggleMenu()">
                     <i class="fas fa-bars"></i>

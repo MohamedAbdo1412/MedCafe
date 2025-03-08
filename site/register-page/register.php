@@ -69,7 +69,7 @@ if(!$conn){
 <?php
 
 
-$operation = "INSERT INTO users (Username, Email, Number, Password) VALUES ('$username', '$email', $number, '$password')";
+$operation = "INSERT INTO users (username, Email, Number, Password) VALUES ('$username', '$email', $number, '$password')";
 $checking = mysqli_query($conn , $operation);
 if(!$checking){
     echo "A7A";

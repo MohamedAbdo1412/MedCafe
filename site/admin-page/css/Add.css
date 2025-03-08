@@ -1,5 +1,5 @@
 :root{
-  --a7a :#dada1c;
+  --a7a :#ffd700;
 }
 
 /* From Uiverse.io by UtariD86 */ 
@@ -14,6 +14,8 @@ button {
   border-radius: 5px;
   box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.15);
   background: var(--a7a);
+  position:relative;
+  transform: scale(0.9);
 }
 
 button,
@@ -24,7 +26,7 @@ button span {
 button .text {
   transform: translateX(35px);
   color: white;
-  font-weight: bold;
+  font-weight: 500;
   font-size: 16px;
 }
 
